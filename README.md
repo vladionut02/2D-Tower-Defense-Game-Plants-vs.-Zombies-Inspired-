@@ -1,61 +1,90 @@
 # 2D-Tower-Defense-Game-Plants-vs.-Zombies-Inspired-
 
-A 2D tower-defense style game built using the **GFX Framework (OpenGL-based)**, inspired by the mechanics of *Plants vs. Zombies*.
+This project is a 2D tower defense game inspired by *Plants vs. Zombies*, built using the OpenGL-based GFX Framework.
 
-The project implements a lane-based defense system where the player collects resources and strategically places units to defend against incoming enemies.
+The game implements a lane-based defense system where the player collects resources and strategically places units on a grid to defend against incoming enemies.
 
-> Developed as part of the Computer Graphics coursework at Politehnica University of Bucharest.
-
----
-
-## 🎮 Game Overview
-
-This project is a **Plants vs. Zombies–style 2D game**, featuring:
-
-- Resource generation and collection system  
-- Drag-and-drop unit placement  
-- Lane-based enemy spawning  
-- Real-time interaction using mouse input  
-- Custom 2D mesh generation (no external sprites)
-
-The default launched scene is `m1::Tema1`.
+It was developed as part of the Computer Graphics coursework at Politehnica University of Bucharest.
 
 ---
 
-## 🧠 Core Mechanics
+## Game Description
 
-### ⭐ Resource System
-- Stars spawn periodically at random positions.
-- Clicking a star collects it and increases the resource counter.
-- Resources are displayed in a currency-style UI in the top-right corner.
+The game is structured around three main components:
 
-### 💎 Unit Placement
-- Four different unit types (diamonds) are available in the top “shop” area.
-- Units can be dragged and placed on a 3x3 grid.
-- Placement is validated per grid cell.
+• A resource system (stars)  
+• A unit placement system (diamonds)  
+• An enemy spawning system (hexagons)  
 
-### ⬡ Enemy System
-- Hexagon-shaped enemies spawn randomly on one of three lanes.
-- Each enemy receives a random color.
-- Enemies move horizontally toward the defensive grid.
+Stars spawn periodically at random positions. The player can click on them to collect resources.
+
+Using those resources, the player can drag and place different types of units on a 3x3 grid. Units are placed via a simple drag-and-drop mechanic.
+
+Enemies spawn randomly on one of three horizontal lanes and move toward the defensive grid.
 
 ---
 
-## 🏗 Technical Implementation
+## Technical Details
 
-### Graphics & Rendering
-- OpenGL-based rendering via GFX Framework
+- Implemented in C++ using the GFX Framework (OpenGL)
 - Orthographic 2D camera (1280x720 resolution)
-- Custom procedural mesh generation:
-  - Squares
-  - Diamonds
-  - Hexagons
-  - Rectangles
+- Custom procedural mesh generation (squares, diamonds, hexagons, rectangles)
+- Mouse-based input handling
+- Axis-Aligned Bounding Box (AABB) collision detection for star selection
+- Basic resource tracking and spawn timing logic
 
-### Input Handling
-- Mouse-based interaction:
-  - Star collection via click
-  - Drag-and-drop unit placement
-- Coordinate transformation:
-  ```cpp
-  y = 720 - mouseY;
+Mouse coordinates are converted to scene space using:
+
+    y = 720 - mouseY
+
+---
+
+## Project Structure
+
+src/
+    main.cpp                  – application entry point
+    lab_m1/Tema1/
+        Tema1.cpp / Tema1.h   – main game logic
+        object2D.cpp / .h     – mesh creation functions
+        transform2D.h         – 2D transformations
+
+assets/models/meshes/star.obj – resource mesh
+
+---
+
+## Build & Run
+
+The project uses CMake.
+
+Windows:
+- Generate the project with CMake
+- Open build/GFXFramework.sln
+- Build and run
+- The scene m1::Tema1 launches by default
+
+Linux / macOS:
+
+    mkdir -p build
+    cd build
+    cmake ..
+    cmake --build . -j
+    ./GFXFramework
+
+If dependencies are missing, check the scripts in the tools/ directory.
+
+---
+
+## Possible Improvements
+
+Future extensions could include:
+- Enemy health and combat interactions
+- Projectile mechanics
+- Animations
+- Win/Lose conditions
+- Difficulty scaling
+
+---
+
+## Author
+
+Vlad Vârzaru
