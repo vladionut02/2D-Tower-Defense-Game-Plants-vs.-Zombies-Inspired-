@@ -91,4 +91,4 @@ Future extensions could include:
 
 ## Author
 
-Vlad Vârzaru
+Vlad Varzaru
