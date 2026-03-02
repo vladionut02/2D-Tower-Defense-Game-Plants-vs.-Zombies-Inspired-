@@ -1,6 +1,7 @@
 # 2D-Tower-Defense-Game-Plants-vs.-Zombies-Inspired-
 
 This project is a 2D tower defense game inspired by *Plants vs. Zombies*, built using the OpenGL-based GFX Framework.
+To run it, integrate the source files into the official GFX Framework project.
 
 The game implements a lane-based defense system where the player collects resources and strategically places units on a grid to defend against incoming enemies.
 
