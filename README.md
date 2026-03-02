@@ -42,13 +42,19 @@ Mouse coordinates are converted to scene space using:
 ## Project Structure
 
 src/
-    main.cpp                  – application entry point
-    lab_m1/Tema1/
-        Tema1.cpp / Tema1.h   – main game logic
-        object2D.cpp / .h     – mesh creation functions
-        transform2D.h         – 2D transformations
+├── main.cpp
+└── lab_m1/
+    └── Tema1/
+        ├── Tema1.cpp
+        ├── Tema1.h
+        ├── object2D.cpp
+        ├── object2D.h
+        └── transform2D.h
 
-assets/models/meshes/star.obj – resource mesh
+assets/
+└── models/
+    └── meshes/
+        └── star.obj
 
 ---
 
