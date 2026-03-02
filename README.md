@@ -41,20 +41,22 @@ Mouse coordinates are converted to scene space using:
 
 ## Project Structure
 
-src
+```
+src/
     main.cpp
-    lab_m1
-        Tema1
+    lab_m1/
+        Tema1/
             Tema1.cpp
             Tema1.h
             object2D.cpp
             object2D.h
             transform2D.h
 
-assets
-    models
-        meshes
+assets/
+    models/
+        meshes/
             star.obj
+```
 
 ---
 
