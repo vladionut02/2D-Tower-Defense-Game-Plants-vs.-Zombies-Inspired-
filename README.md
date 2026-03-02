@@ -33,10 +33,6 @@ Enemies spawn randomly on one of three horizontal lanes and move toward the defe
 - Axis-Aligned Bounding Box (AABB) collision detection for star selection
 - Basic resource tracking and spawn timing logic
 
-Mouse coordinates are converted to scene space using:
-
-    y = 720 - mouseY
-
 ---
 
 ## Project Structure
